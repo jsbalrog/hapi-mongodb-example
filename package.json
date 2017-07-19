@@ -1,0 +1,33 @@
+{
+  "name": "getting-started-with-hapi-js-part-1",
+  "version": "1.0.0",
+  "description": "Getting started with Hapi.js -- Part 1",
+  "engines": {
+    "node": "7.10"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "lint": "eslint ."
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "blipp": "^2.3.0",
+    "boom": "^5.1.0",
+    "hapi": "^16.4.3",
+    "hapi-auth-jwt": "^4.0.0",
+    "hapi-router": "^3.5.0",
+    "inert": "^4.2.0",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.11.3",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0",
+    "eslint-config-vstg": "^2.1.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0"
+  }
+}
