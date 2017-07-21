@@ -11,21 +11,17 @@ const server = new Server();
 
 server.connection({ port: 3000 });
 
-module.exports = registerPlugins(server)
-  .then(() => {
-    return server.initialize();
-  })
-  .then(() => {
-    return server.start()
-      .then(() => {
-        console.log(`Sentinel server started at ${ server.info.uri }`); // eslint-disable-line
+async function initialize() {
+  try {
+    await registerPlugins(server);
+    await server.initialize();
+    await server.start();
+    console.log(`Sentinel server started at ${ server.info.uri }`); // eslint-disable-line
 
-        return null;
-      });
-  })
-  .then(() => {
     return server;
-  })
-  .catch((e) => {
-    throw e;
-  });
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = initialize();

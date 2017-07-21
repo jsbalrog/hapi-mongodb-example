@@ -7,6 +7,14 @@ const plugins = [
   'vision',
 ].map(require);
 
-module.exports = (server) => {
-  return Promise.resolve(server.register(plugins));
-};
+async function registerPlugins(server) {
+  try {
+    const register = await server.register(plugins);
+
+    return register;
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = registerPlugins;
