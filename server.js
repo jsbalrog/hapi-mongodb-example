@@ -16,7 +16,7 @@ async function initialize() {
     await registerPlugins(server);
     await server.initialize();
     await server.start();
-    console.log(`Sentinel server started at ${ server.info.uri }`); // eslint-disable-line
+    console.log(`Server started at ${ server.info.uri }`); // eslint-disable-line
 
     return server;
   } catch (error) {

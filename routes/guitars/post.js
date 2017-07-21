@@ -2,9 +2,9 @@ const Boom = require('boom');
 const Guitar = require('../../models/guitar').Guitar;
 
 module.exports = {
-  method: 'POST',
   path: '/guitars',
-  handler: (request, reply) => {
+  method: 'POST',
+  async handler(request, reply) {
     const guitar = new Guitar();
 
     guitar.type = request.payload.type;
