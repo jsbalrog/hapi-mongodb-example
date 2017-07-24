@@ -4,6 +4,11 @@ const Guitar = require('../../models/guitar').Guitar;
 module.exports = {
   path: '/guitars',
   method: 'POST',
+  config: {
+    tags: [ 'api' ],
+    description: 'Create a new guitar',
+    notes: 'Create a new guitar',
+  },
   async handler(request, reply) {
     const guitar = new Guitar();
 

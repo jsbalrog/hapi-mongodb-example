@@ -3,6 +3,7 @@
 const plugins = [
   './router',
   './blipp',
+  './swagger',
   'inert',
   'vision',
 ].map(require);
