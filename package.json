@@ -21,7 +21,6 @@
     "hapi-router": "^3.5.0",
     "hapi-swagger": "^7.7.0",
     "inert": "^4.2.0",
-    "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.11.3",
     "swaggerize-ui": "^1.0.1",
     "vision": "^4.1.1"

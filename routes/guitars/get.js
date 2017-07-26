@@ -5,6 +5,9 @@ module.exports = {
   path: '/guitars',
   method: 'GET',
   config: {
+    auth: {
+      strategy: 'token',
+    },
     tags: [ 'api' ],
     description: 'Get all guitars',
     notes: 'Get all guitars',

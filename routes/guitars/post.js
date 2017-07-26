@@ -5,6 +5,9 @@ module.exports = {
   path: '/guitars',
   method: 'POST',
   config: {
+    auth: {
+      strategy: 'token',
+    },
     tags: [ 'api' ],
     description: 'Create a new guitar',
     notes: 'Create a new guitar',

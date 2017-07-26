@@ -1,5 +1,7 @@
 'use strict';
 
+const jwt = require('./jwt');
+
 const plugins = [
   './router',
   './blipp',
@@ -8,14 +10,14 @@ const plugins = [
   'vision',
 ].map(require);
 
-async function registerPlugins(server) {
-  try {
-    const register = await server.register(plugins);
-
-    return register;
-  } catch (error) {
-    throw error;
-  }
-}
-
-module.exports = registerPlugins;
+module.exports = {
+  async registerPlugins(server) {
+    try {
+      await jwt.setUpAuth(server);
+      await server.register(plugins);
+    } catch (error) {
+      console.log(error); // eslint-disable-line
+      throw error;
+    }
+  },
+};
