@@ -1,5 +1,6 @@
 const Boom = require('boom');
 const Guitar = require('../../models/guitar').Guitar;
+const getErrorMessageFrom = require('../../utils').getErrorMessageFrom;
 
 module.exports = {
   path: '/guitars',
@@ -15,7 +16,7 @@ module.exports = {
   async handler(request, reply) {
     Guitar.find({}, function(err, guitars) {
       if (err) {
-        reply(Boom.badImplementation(err)); // 500
+        reply(Boom.badImplementation(getErrorMessageFrom(err))); // 500
       } else {
         reply(guitars);
       }
